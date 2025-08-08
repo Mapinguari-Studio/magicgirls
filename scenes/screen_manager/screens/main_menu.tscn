@@ -1,0 +1,168 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbsei1e1xvkot"]
+
+[ext_resource type="PackedScene" uid="uid://dei3ieq77bleq" path="res://scenes/components/transition_component.tscn" id="1_dxijm"]
+[ext_resource type="Script" uid="uid://caq28xtiu54fp" path="res://scripts/screen_manager/screens/main_menu.gd" id="1_tgk1t"]
+[ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://resources/theme/kenneyUI.tres" id="2_31780"]
+[ext_resource type="Texture2D" uid="uid://cm5gqve7qpgwo" path="res://resources/Enjl-Starry Space Background/background_1.png" id="3_m0e4s"]
+[ext_resource type="Texture2D" uid="uid://cdiscjw27yupv" path="res://resources/Enjl-Starry Space Background/background_2.png" id="5_0nbkj"]
+[ext_resource type="Texture2D" uid="uid://dmx1hcj2rgid7" path="res://resources/Enjl-Starry Space Background/background_3.png" id="6_t2t33"]
+[ext_resource type="Texture2D" uid="uid://braujhkxs1hk2" path="res://resources/Enjl-Starry Space Background/background_4.png" id="7_31780"]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_tgk1t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/Control"]
+layer = 3
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/CanvasLayer/Control"]
+texture_filter = 3
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="start_button" type="Button" parent="CanvasLayer/Control/CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_31780")
+text = "START"
+
+[node name="separator" type="Control" parent="CanvasLayer/Control/CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="separator2" type="Control" parent="CanvasLayer/Control/CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="settings_button" type="Button" parent="CanvasLayer/Control/CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_31780")
+text = "settings"
+
+[node name="separator3" type="Control" parent="CanvasLayer/Control/CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="separator4" type="Control" parent="CanvasLayer/Control/CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="exit_button" type="Button" parent="CanvasLayer/Control/CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_31780")
+text = "exit"
+
+[node name="background" type="Control" parent="CanvasLayer/Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/background"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TransitionComponent" parent="." instance=ExtResource("1_dxijm")]
+texture_filter = 3
+position = Vector2(10, -318)
+
+[node name="ParallaxBackground" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ParallaxBackground"]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/CanvasLayer"]
+texture_filter = 3
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(240, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CanvasLayer/Parallax2D"]
+texture_filter = 3
+position = Vector2(576.5, 327.5)
+scale = Vector2(4.50391, 2.87946)
+texture = ExtResource("3_m0e4s")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="ParallaxBackground"]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/CanvasLayer2"]
+texture_filter = 3
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(240, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CanvasLayer2/Parallax2D"]
+texture_filter = 3
+position = Vector2(576.5, 327.5)
+scale = Vector2(4.50391, 2.87946)
+texture = ExtResource("5_0nbkj")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="ParallaxBackground"]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/CanvasLayer3"]
+texture_filter = 3
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(240, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CanvasLayer3/Parallax2D"]
+texture_filter = 3
+position = Vector2(576.5, 327.5)
+scale = Vector2(4.50391, 2.87946)
+texture = ExtResource("6_t2t33")
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="ParallaxBackground"]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/CanvasLayer4"]
+texture_filter = 3
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(240, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CanvasLayer4/Parallax2D"]
+texture_filter = 3
+position = Vector2(576.5, 327.5)
+scale = Vector2(4.50391, 2.87946)
+texture = ExtResource("7_31780")
+
+[connection signal="pressed" from="CanvasLayer/Control/CanvasLayer/Control/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
